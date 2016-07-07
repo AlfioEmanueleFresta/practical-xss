@@ -63,20 +63,17 @@ simply delete your VM and restart it from a fresh copy.
 
 **TODO: Maybe provide something easier to reset the code?**
 
-PHP files (``.php``) contain HTML code and they may contain some PHP code
+PHP files (``.php`` extension) contain HTML code and they may contain some PHP code
 between ``<?php`` and ``?>`` tags. PHP code is processed by the server when
 a webpage is requested, its output is mixed with the HTML page and only
-HTML is returned to the client.
-
-Variables stat with a dollar sign (``$``) and all instructions must terminate
-with a semicolon (``;``), similar to the C language. PHP is a very popular
-language in web development and you can find its documentation at
+HTML is returned to the client. Variable names start with a dollar sign (``$``) and all instructions must terminate
+with a semicolon (``;``). You can learn more about the language at
 http://php.net/manual/en/langref.php.
 
 The ``prepareSearchTerm`` function is used to prepare the string before it
 is used to search the articles of the website.
 
-**Change the ``prepareSearchTerm`` function to fix the vulnerability.**
+**Change the** ``prepareSearchTerm`` **function to fix the vulnerability.**
 **Then test that the string you prepared in the previous excercise,**
 **is now innocuous and can't be used to display an image.**
 
@@ -109,20 +106,20 @@ sending HTTP requests.
 There are two ways to insert Javascript in a HTML file:
 
 1. Using a ``<script>...</script>`` tag, including the Javascript code directly
-   in between the tags, or
+   in between the tags.
 
 2. Hosting the script on different web server, and injecting it using:
-   ``<script src="http://example.com/malicious-code.js"></script>``. This
-   is known XSS, or Cross-site scripting, and is a particular case of
-   Code injection.
+   ``<script src="http://example.com/malicious-code.js"></script>``,
+   where ``malicious-code.js`` is a file containing Javascript code. This
+   is known **XSS**, or Cross-site scripting.
 
 The comments section of the website is vulnerable to XSS but this time
 the content of the comments is saved to the database, therefore this
 application is vulnerable to *permanent XSS attacks*, which can be vary
 dangerous.
 
-Try typing the following code in the comment box of an article, and observe
-its effect on you and other users:
+**Try typing the following code in the comment box of an article, and observe**
+**its effect on you and other users who visit the same page:**
 
 .. code:: javascript
 
