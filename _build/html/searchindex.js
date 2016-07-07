@@ -1,0 +1,1 @@
+Search.setIndex({envversion:50,filenames:["index"],objects:{},objnames:{},objtypes:{},terms:{amet:0,content:0,dolor:0,index:0,ipsum:0,lorem:0,modul:0,page:0,search:0,sit:0},titles:["Cyber-Practicals: Input sanitisation and XSS"],titleterms:{cyber:0,indice:0,input:0,practic:0,sanitis:0,tabl:0,xss:0}})
