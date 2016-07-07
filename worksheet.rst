@@ -29,19 +29,18 @@ searches the database for articles by their title.
 In this website, the search input is not appropriately sanitised.
 Notice that the search functionality of the website returns a webpage with
 a heading which counts the number of results and echoes back the search
-terms used (i.e. searching for ``Lorem ipsum`` will print
- ``4 results for "Lorem ipsum"``).
+terms used (i.e. searching for ``Lorem ipsum`` will print ``4 results for "Lorem ipsum"``).
 
 If you insert some HTML code into the input bar, you can notice that
 this is not correctly filtered by the application.
-For example, if you write ``<u>Hello</u>``,
-you can see that the webpage now shows the text underlined, as opposed
-to displaying the caracters as they have been typed. This is
+For example, if you type ``<u>Hello</u>`` into the search bar and press enter,
+you can see that the webpage will display the text underlined, as opposed
+to displaying the string as it has been typed. This is
 because the HTML ``<u>...</u>`` tag is responsible for underlining text,
 and the unfiltered text is interpreted as HTML code by the browser.
 
-**Exploit this functionality to display an arbitrary image from
-  the internet in the search page.**
+**Exploit this functionality to display an arbitrary image from the internet**
+**in the search page.**
 
 Hint:
     Try searching the internet for ways to display an image in HTML.
@@ -78,8 +77,8 @@ The ``prepareSearchTerm`` function is used to prepare the string before it
 is used to search the articles of the website.
 
 **Change the ``prepareSearchTerm`` function to fix the vulnerability.**
-**Then test that the string you prepared in the previous excercise,
-is now innocuous and can't be used to display an image.**
+**Then test that the string you prepared in the previous excercise,**
+**is now innocuous and can't be used to display an image.**
 
 Hint:
     There are a couple of ways you can implement the fix to prevent
@@ -121,3 +120,78 @@ The comments section of the website is vulnerable to XSS but this time
 the content of the comments is saved to the database, therefore this
 application is vulnerable to *permanent XSS attacks*, which can be vary
 dangerous.
+
+Try typing the following code in the comment box of an article, and observe
+its effect on you and other users:
+
+.. code:: javascript
+
+  <script> alert("Hello world"); </script>
+
+
+
+How Sessions Work
+-----------------
+
+In order to understand identity thefth attacks, it is important to
+understand how sessions work in web applications. If you already know
+about sessions and cookies, feel free to skip this section.
+
+HTTP (*Hypertext Transfer Protocol*) is the protocol used for the transmission
+of webpages and is the foundation of websites and web applications. Its
+development began in 1989, before modern web applications, and it was originally
+designed to serve as a protocol for simple informative webpages. It is probably
+for this reason that HTTP is a *stateless* protocol, meaning that its
+specification has no concept of a permanent *session* between a client
+and a server.
+
+This may at first seem counterintuitive to readers,
+because modern websites and web applications still use HTTP and
+certainly do support authentication and other
+systems that rely on the concept of the session.
+
+**Cookies and sessions**
+
+In order to keep track of the
+current session information, most web applications use techniques such as
+session cookies. Cookies are small text files which contain information that is
+exchanged back and forth at every request between a client and a server.
+
+At the first visit, the server assigns a random ID to the client, called the
+session ID. This is communicated to the client. The server will store locally
+any information regarding the current state of the application (the *session*
+*data*), such as the authentication status of the user. The client, on the
+other hand, will communicate its session ID to the server at every request,
+so to receive webpages personalised on the basis of the logged in user.
+
+The security of this method relies on the fact that the session information is
+only accessible by the server, and that the session IDs are extremely
+hard to guess.
+
+You can try for yourself: most browsers allow users to view the list of cookies.
+Try visiting a familiar website and logging in. At this point, you will probably
+be able to see some cookie with a name such as "SESSION_ID", "SESSID" or "UID",
+which will contain a long random string. Try deleting this cookie and refreshing
+the webpage and you will probably be logged out of the website.
+
+
+Using Javascript to steal the session ID
+----------------------------------------
+
+Javascript code has the ability to read and write cookies from and to the
+browser. The cookies string can be accessed as the variable ``document.cookie``,
+which contains all cookies in a key-value format (``key1=value1; key2=value2; ...``).
+
+Most modern web browsers allow you access a Javascript interpreter,
+which can be very useful for prototyping and debugging your Javascript code.
+This can generally be accessed under the "Developer Tools" or "Inspector"
+menus of your browser.
+
+Open your favourite website and then this console. Typing ``document.cookie``
+will probably show you a long list of cookies, which are used for statistics,
+sessions, and advertisement profiling.
+
+Intuitively, being able to read the session ID of another user and using it
+on your computer, is normally enough to fool the website into believing you
+are the other user: this will cause the website to log you in as the other
+user.
