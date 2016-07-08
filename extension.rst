@@ -18,18 +18,26 @@ the website:
 **reproduce itself it the user who views the comment is authenticated.**
 
 Hint:
-  You can use jQuery's helpers to get the ``<script>`` tag containing the
-  code from the code itself:
+  You can use HTML classes and jQuery's helpers to find objects in
+  the document.
+
+  .. code:: html
+
+    <div class="my-class">
+      Hello <strong>World</strong>
+    </div>
 
   .. code:: javascript
 
-    jQuery(this).html();
+    $(".my-class")
+    // This will get all objects with class "my-class". Note that this
+    // is an iterable and you should use an index or methods such as
+    // .first(), .last() to get a single object.
 
-  Please note that this will only work in the webpage, and can't be used in
-  the Javascript Console.
+  Also, you may find useful the documentation of these jQuery methods:
 
-  Also, you can use ``.parent()`` from any element in the DOM tree to get its
-  container (parent).
+  * .parent():  https://api.jquery.com/parent/
+  * .html():    http://api.jquery.com/html/
 
 
 **References**
