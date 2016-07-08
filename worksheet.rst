@@ -192,3 +192,47 @@ Intuitively, being able to read the session ID of another user and using it
 on your computer, is normally enough to fool the website into believing you
 are the other user: this will cause the website to log you in as the other
 user.
+
+Javascript code can be used to make HTTP requests in background. These are
+known as AJAX requests. For example, you can use
+Javascript to post a comment to the article with ID 1 (URL ``...&article_id=1``)
+by writing:
+
+.. code:: javascript
+
+  jQuery.post("?page=comment.php",
+              {article_id: 1, body: "My comment."});
+
+This method, provided by the jQuery library,
+makes a HTTP POST request to the URL ``/?page=comment.php`` with payload
+``article_id=1`` and ``body=My comment.``. You can learn more about the
+``$.post`` method at https://api.jquery.com/jquery.post/.
+
+**Write a comment with some Javascript code that as soon as it is read,**
+**will write a comment to another article, containing the cookie information**
+**from the browser the user.**
+
+Hint:
+  Try combining the function presented above with the ``document.cookie``
+  variable. Don't forget the ``<script></script>`` tags!
+
+**Login with a second user and try visiting the article which has the**
+**malicious comment. Verify that the**
+**user unknowingly commented on the other article, publishing their session ID.**
+
+**Try to impersonate the other user, without using their credentials.**
+
+Hint:
+  To change your session ID, you will need to edit your own cookies.
+  Unfortunately, most modern browsers' developer tools allow you only
+  to view and delete cookies, but not to edit them. You will need to
+  download an extension for your browser in order to edit cookies.
+
+  For example you can use Firebug for Firefox, which is available
+  at https://getfirebug.com/downloads/. You can then activate the
+  Firebug panel, open the Cookies tab and edit your cookies.
+
+Generally XSS attacks rely on sending the cookies' content to a
+third party web server, under the control of the attacker,
+as opposed to simply publishing the cookies in the same website.
+This is the reason these attacks are known as *Cross-Site*.
