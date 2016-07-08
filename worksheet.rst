@@ -203,10 +203,10 @@ by writing:
   jQuery.post("?page=comment.php",
               {article_id: 1, body: "My comment."});
 
-This method, provided by the jQuery library,
+This method, provided by the jQuery library (included for simplicity),
 makes a HTTP POST request to the URL ``/?page=comment.php`` with payload
 ``article_id=1`` and ``body=My comment.``. You can learn more about the
-``$.post`` method at https://api.jquery.com/jquery.post/.
+``jQuery.post`` method at https://api.jquery.com/jquery.post/.
 
 **Write a comment with some Javascript code that as soon as it is read,**
 **will write a comment to another article, containing the cookie information**
