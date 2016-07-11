@@ -180,6 +180,16 @@ Hint:
     clicking on the information sign icon in the address bar, "More Information",
     "Security" tab.
 
+Ethics and regulations:
+    At the time of writing, in the UK websites are required to ask for the
+    user's explicit consent
+    before storing some cookies on the user's browser
+    and also need to explain what cookies are and how exactly they are used
+    in the website. This also applies to similar technologies (e.g. HTML5
+    session storage), but simple session cookies are generally exempt.
+    Learn more at
+    https://ico.org.uk/for-organisations/guide-to-pecr/cookies-and-similar-technologies/.
+
 
 Using Javascript to steal the session ID
 ----------------------------------------

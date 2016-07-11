@@ -43,4 +43,7 @@ and access to the jQuery documentation available at https://api.jquery.com/.
 Ethical Issues
 ______________
 
-**TODO**
+As is common in security teaching, the techniques described here could be
+used to attack systems but you must behave responsibly and ethically toward
+other people, their data and systems. The writing or use of tools to gain
+unauthorised access to systems is a criminal offence.
