@@ -2,10 +2,10 @@ Extension Challenge
 ===================
 
 XSS attacks have been used many times in the recent years to attack
-important companies and websites, including Tweeter's Tweetdeck in 2004[1] and
-MySpace in 2005[2]. Both these attacks had one thing in common: the
-Javascript code injected had the ability to replicate itself over
-the website:
+important companies and websites, including Tweeter's Tweetdeck in 2004[1],
+MySpace in 2005[2] and Facebook in 2011[3]. All these attacks had one thing
+in common: the Javascript code injected had the ability to replicate
+itself over the website:
 
 * Tweetdeck's vulnerability was exploited to retweet the mailicious
   automatically when viewing the tweet.
@@ -48,4 +48,7 @@ Hint:
   [Accessed July 2016].
 [2] "Samy (Computer worm)"
   Wikipedia. [Online] Avaiable at: https://en.wikipedia.org/wiki/Samy_(computer_worm)
+  [Accessed July 2016].
+[3] "Persistent XSS Vulnerability in Facebook",
+  Candid Wueest, Symantec. [Online] Available at: http://www.symantec.com/connect/blogs/persistent-xss-vulnerability-facebook
   [Accessed July 2016].
