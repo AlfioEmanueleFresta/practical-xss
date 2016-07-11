@@ -29,15 +29,16 @@ Hint:
 
   .. code:: javascript
 
-    $(".my-class")
+    jQuery(".my-class")
     // This will get all objects with class "my-class". Note that this
     // is an iterable and you should use an index or methods such as
     // .first(), .last() to get a single object.
 
   Also, you may find useful the documentation of these jQuery methods:
 
-  * .parent():  https://api.jquery.com/parent/
-  * .html():    http://api.jquery.com/html/
+  * jQuery(...):  http://api.jquery.com/jquery/
+  * .parent():    https://api.jquery.com/parent/
+  * .html():      http://api.jquery.com/html/
 
 
 **References**
