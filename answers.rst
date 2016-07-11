@@ -17,6 +17,9 @@ Using Javascript to steal the session ID
   </script>
 
 
+* ``document.cookie`` is the string containing the users' cookies. You can learn more about this string at https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie.
+
+
 Extension Challenge
 ----------------------------------------
 
@@ -42,4 +45,7 @@ in case the page contains other scripts (or many copies of the script).
 includes both the script and the rest of the text of the comment.
 
 * ``.html()`` is used to get the source code of the tag, including
-its content (the Javascript code).
+its Javascript content.
+
+* ``This comment will be shared automatically...`` is the text of the payload
+message that will be visible to users and will be reshared automatically.
