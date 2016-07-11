@@ -5,7 +5,7 @@ XSS attacks have been used many times in the recent years to attack
 important companies and websites, including Tweeter's Tweetdeck in 2004[1],
 MySpace in 2005[2] and Facebook in 2011[3]. All these attacks had one thing
 in common: the Javascript code injected had the ability to replicate
-itself over the website:
+itself in some way across the website:
 
 * Tweetdeck's vulnerability was exploited to retweet the mailicious
   automatically when viewing the tweet.
@@ -13,6 +13,10 @@ itself over the website:
 * MySpace's vulnerability was exploited by an attacker to autmatically add
   to each person's profile the phrase "samy is my hero", plus some code that
   would automatically and silently put the same phrase in the viewer's profile.
+
+* Facebook's vulnerability was exploited by an attacker to automatically send
+  a private message to the victim's friends, which included a malicious URL.
+
 
 **Extend the code used in the last excercise, so that the code will automatically**
 **reproduce itself it the user who views the comment is authenticated.**

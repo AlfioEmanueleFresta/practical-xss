@@ -1,12 +1,10 @@
-**DRAFT**
-
 Worksheet
 ========================================================================
 
 Preparation
 ___________
 
-Start the Virtual Machine and use a browser to navigate to the
+Start the Virtual Machine and use your favourite browser to navigate to the
 web application (port 12342) and Usermin (port 12323).
 
 After logging in, Usermin will show you the contents of ``/home/student``, from
@@ -23,19 +21,19 @@ allows users to login, view articles, comment them and
 Unsanitised output
 _____________________
 
-Try and use the search function of the website. This page simply
+Try to use the search functionality of the website. This page simply
 searches the database for articles by their title.
 
 In this website, the search input is not appropriately sanitised.
 Notice that the search functionality of the website returns a webpage with
-a heading which counts the number of results and echoes back the search
+a heading which counts the number of results and prints back the search
 terms used (i.e. searching for ``Lorem ipsum`` will print ``4 results for "Lorem ipsum"``).
 
 If you insert some HTML code into the input bar, you can notice that
 this is not correctly filtered by the application.
 For example, if you type ``<u>Hello</u>`` into the search bar and press enter,
-you can see that the webpage will display the text underlined, as opposed
-to displaying the string as it has been typed. This is
+you can see that the webpage will display the text underlined, instead of
+displaying the string as it has been typed. This is
 because the HTML ``<u>...</u>`` tag is responsible for underlining text,
 and the unfiltered text is interpreted as HTML code by the browser.
 
@@ -47,8 +45,8 @@ Hint:
 
 This type of attack is known as *non-persistent*, because the result is
 not saved in the website's database, and it needs the attacker to share
-the link of the resulting search results page and it only affects users
-which click on the malicious link.
+the link of the search results page and it only affects users who
+click on the malicious link.
 
 
 Fix the search
@@ -56,25 +54,28 @@ ______________
 
 The webpage which is responsible for the search is available for you to
 edit from Usermin in ``/home/student/webapp/pages/search.php``. You can
-make changes to the file, save and reload the webpage to check the result.
+make changes to the file, save it and reload the page of the website
+to check the result.
 
 If things go wrong and you want to restore the inital version of the file,
 simply delete your VM and restart it from a fresh copy.
 
 **TODO: Maybe provide something easier to reset the code?**
 
-PHP files (``.php`` extension) contain HTML code and they may contain some PHP code
+PHP files (having ``.php`` extension) contain HTML code and they may contain some PHP code
 between ``<?php`` and ``?>`` tags. PHP code is processed by the server when
 a webpage is requested, its output is mixed with the HTML page and only
-HTML is returned to the client. Variable names start with a dollar sign (``$``) and all instructions must terminate
-with a semicolon (``;``). You can learn more about the language at
+HTML is returned to the web browser. Variable names start with a dollar sign (``$``)
+and all instructions must terminate with a semicolon (``;``). You can learn more about the language at
 http://php.net/manual/en/langref.php.
 
 The ``prepareSearchTerm`` function is used to prepare the string before it
-is used to search the articles of the website.
+is used to search the articles of the website. Currently, it only capitalises
+the first letter of each word in the string
+(i.e. ``this is a search query`` -> ``This Is A Search Query``).
 
 **Change the** ``prepareSearchTerm`` **function to fix the vulnerability.**
-**Then test that the string you prepared in the previous excercise,**
+**Then test that the string you prepared in the previous excercise**
 **is now innocuous and can't be used to display an image.**
 
 Hint:
@@ -98,8 +99,8 @@ IP address, the browser used, and whether the user has opened the webpage
 or not (this tecquique is known as `web beacon <https://en.wikipedia.org/wiki/Web_beacon>`_).
 
 Probably, the most dangerous HTML code which can be injected into webpages
-is Javascript code. This code is automatically executed by the web browser
-as soon as it is encountered, and permits a broad range of operations, such as
+is Javascript scripts. These are automatically executed by the web browser
+as soon as they are encountered, and permit a broad range of operations, such as
 the manipulation of the DOM (structure of the page), reading cookies and
 sending HTTP requests.
 
@@ -114,7 +115,7 @@ There are two ways to insert Javascript in a HTML file:
    is known **XSS**, or Cross-site scripting.
 
 The comments section of the website is vulnerable to XSS but this time
-the content of the comments is saved to the database, therefore this
+the content of the comments is persisted to the database, therefore this
 application is vulnerable to *permanent XSS attacks*, which can be vary
 dangerous.
 
@@ -139,19 +140,19 @@ of webpages and is the foundation of websites and web applications. Its
 development began in 1989, before modern web applications, and it was originally
 designed to serve as a protocol for simple informative webpages. It is probably
 for this reason that HTTP is a *stateless* protocol, meaning that its
-specification has no concept of a permanent *session* between a client
+specification has no concept of a *session* between a client
 and a server.
 
 This may at first seem counterintuitive to readers,
 because modern websites and web applications still use HTTP and
 certainly do support authentication and other
-systems that rely on the concept of the session.
+systems that rely on the concept of a *session*.
 
 **Cookies and sessions**
 
 In order to keep track of the
 current session information, most web applications use techniques such as
-session cookies. Cookies are small text files which contain information that is
+session cookies. Cookies are small strings which contain information that is
 exchanged back and forth at every request between a client and a server.
 
 At the first visit, the server assigns a random ID to the client, called the
@@ -166,10 +167,18 @@ only accessible by the server, and that the session IDs are extremely
 hard to guess.
 
 You can try for yourself: most browsers allow users to view the list of cookies.
-Try visiting a familiar website and logging in. At this point, you will probably
+**Try visiting a familiar website and logging in**. At this point, you will probably
 be able to see some cookie with a name such as "SESSION_ID", "SESSID" or "UID",
 which will contain a long random string. Try deleting this cookie and refreshing
 the webpage and you will probably be logged out of the website.
+
+Hint:
+    If you're using Google Chrome, you should be able to see a list of cookies
+    by clicking on the icon in the Omnibar.
+
+    If you're using Firefox, you should be able to see a list of cookies by
+    clicking on the information sign icon in the address bar, "More Information",
+    "Security" tab.
 
 
 Using Javascript to steal the session ID
@@ -179,29 +188,31 @@ Javascript code has the ability to read and write cookies from and to the
 browser. The cookies string can be accessed as the variable ``document.cookie``,
 which contains all cookies in a key-value format (``key1=value1; key2=value2; ...``).
 
-Most modern web browsers allow you access a Javascript interpreter,
-which can be very useful for prototyping and debugging your Javascript code.
+Most modern web browsers allow you access a Javascript interpreter in the scope
+of the current webpage, which can be very useful for prototyping and debugging
+your Javascript code.
 This can generally be accessed under the "Developer Tools" or "Inspector"
 menus of your browser.
 
-Open your favourite website and then this console. Typing ``document.cookie``
+Open your favourite website and then this Console. Typing ``document.cookie``
 will probably show you a long list of cookies, which are used for statistics,
 sessions, and advertisement profiling.
 
 Intuitively, being able to read the session ID of another user and using it
 on your computer, is normally enough to fool the website into believing you
-are the other user: this will cause the website to log you in as the other
+are in fact the other user: this will cause the website to log you in as the other
 user.
 
 Javascript code can be used to make HTTP requests in background. These are
 known as AJAX requests. For example, you can use
 Javascript to post a comment to the article with ID 1 (URL ``...&article_id=1``)
-by writing:
+by writing in the Console:
 
 .. code:: javascript
 
   jQuery.post("?page=comment.php",
               {article_id: 1, body: "My comment."});
+
 
 This method, provided by the jQuery library (included for simplicity),
 makes a HTTP POST request to the URL ``/?page=comment.php`` with payload
@@ -210,7 +221,7 @@ makes a HTTP POST request to the URL ``/?page=comment.php`` with payload
 
 **Write a comment with some Javascript code that as soon as it is read,**
 **will write a comment to another article, containing the cookie information**
-**from the browser the user.**
+**from the browser of the user.**
 
 Hint:
   Try combining the function presented above with the ``document.cookie``
