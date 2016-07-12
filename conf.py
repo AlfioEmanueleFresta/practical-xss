@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'dbinfer'
+project = 'Input Sanitisation and XSS'
 copyright = '2016, Alfio E. Fresta'
 author = 'Alfio E. Fresta'
 
@@ -286,4 +286,3 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
-

@@ -1,7 +1,5 @@
 Cyber-Practicals: Input sanitisation and XSS
-=========================
-
-Lorem ipsum dolor sit amet.
+============================================
 
 Contents:
 
@@ -20,5 +18,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-
