@@ -7,7 +7,7 @@ MySpace in 2005[2] and Facebook in 2011[3]. All these attacks had one thing
 in common: the Javascript code injected had the ability to replicate
 itself in some way across the website:
 
-* Tweetdeck's vulnerability was exploited to retweet the mailicious
+* Tweetdeck's vulnerability was exploited to retweet the malicious
   automatically when viewing the tweet.
 
 * MySpace's vulnerability was exploited by an attacker to autmatically add
@@ -18,7 +18,7 @@ itself in some way across the website:
   a private message to the victim's friends, which included a malicious URL.
 
 
-**Extend the code used in the last excercise, so that the code will automatically**
+**Extend the code used in the last exercise, so that the code will automatically**
 **reproduce itself it the user who views the comment is authenticated.**
 
 Hint:
@@ -51,7 +51,7 @@ Hint:
   Alex Hern, The Guardian. [Online] Available at:  https://www.theguardian.com/technology/2014/jun/11/twitter-tweetdeck-xss-flaw-users-vulnerable
   [Accessed July 2016].
 [2] "Samy (Computer worm)"
-  Wikipedia. [Online] Avaiable at: https://en.wikipedia.org/wiki/Samy_(computer_worm)
+  Wikipedia. [Online] Available at: https://en.wikipedia.org/wiki/Samy_(computer_worm)
   [Accessed July 2016].
 [3] "Persistent XSS Vulnerability in Facebook",
   Candid Wueest, Symantec. [Online] Available at: http://www.symantec.com/connect/blogs/persistent-xss-vulnerability-facebook

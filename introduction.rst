@@ -21,7 +21,7 @@ The objective of this experiment is to:
 
 * Understand the importance of input data sanitisation
 * Appreciate the extent of the risk of processing not adequately sanitised input data in web applications
-* Understand the details of XSS attacks (identity thefth via session cookie thefth) in web applications
+* Understand the details of XSS attacks (identity theft via session cookie) in web applications
 
 
 Prerequisites, Equipment and Software
@@ -31,12 +31,12 @@ A general knowledge of procedural programming languages is required to
 complete the worksheet. You should also understand the basics of
 HTML markup.
 
-Knowledge of the PHP scripting language and Javascript is preferrable but
+Knowledge of the PHP scripting language and Javascript is preferable but
 not necessary, as the exercises only require basic string operations
 and constructs, and all of the documentation can be easily found
 on the internet together with extensive code examples.
 
-The extension excercise requires some knowledge of Javascript
+The extension exercise requires some knowledge of Javascript
 and access to the jQuery documentation available at https://api.jquery.com/.
 
 

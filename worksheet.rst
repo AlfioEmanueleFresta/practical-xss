@@ -14,7 +14,7 @@ The web application is a sample website designed to demonstrate
 some security vulnerabilities, including those explained in this worksheet.
 
 The first step is to familiarise with the website. You can create an
-accout using the "Register" link at the top of the page. The website
+account using the "Register" link at the top of the page. The website
 allows users to login, view articles, comment them and
 
 
@@ -57,7 +57,7 @@ edit from Usermin in ``/home/student/webapp/pages/search.php``. You can
 make changes to the file, save it and reload the page of the website
 to check the result.
 
-If things go wrong and you want to restore the inital version of the file,
+If things go wrong and you want to restore the initial version of the file,
 simply delete your VM and restart it from a fresh copy.
 
 **TODO: Maybe provide something easier to reset the code?**
@@ -75,7 +75,7 @@ the first letter of each word in the string
 (i.e. ``this is a search query`` -> ``This Is A Search Query``).
 
 **Change the** ``prepareSearchTerm`` **function to fix the vulnerability.**
-**Then test that the string you prepared in the previous excercise**
+**Then test that the string you prepared in the previous exercise**
 **is now innocuous and can't be used to display an image.**
 
 Hint:
@@ -89,14 +89,14 @@ Hint:
 Injecting Javascript Code
 _________________________
 
-Injecting simple formatting in webpages may temporarely
+Injecting simple formatting in webpages may temporarily
 disrupt the layout of the webpage but is not generally a security risk.
 
 Images can be a risk for privacy in some cases, for example if the
 image is served by a webserver which is under the control of the attacker,
 this can be used to retrieve information about the end user, such as
 IP address, the browser used, and whether the user has opened the webpage
-or not (this tecquique is known as `web beacon <https://en.wikipedia.org/wiki/Web_beacon>`_).
+or not (this technique is known as `web beacon <https://en.wikipedia.org/wiki/Web_beacon>`_).
 
 Probably, the most dangerous HTML code which can be injected into webpages
 is Javascript scripts. These are automatically executed by the web browser
@@ -131,7 +131,7 @@ dangerous.
 How Sessions Work
 -----------------
 
-In order to understand identity thefth attacks, it is important to
+In order to understand identity theft attacks, it is important to
 understand how sessions work in web applications. If you already know
 about sessions and cookies, feel free to skip this section.
 
