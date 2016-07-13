@@ -31,12 +31,29 @@ and development teams to understand and put in place processes for reviewing
 the security aspect of applications periodically, and strengthening it if
 necessary.
 
-**Data sanitisation**
 
-TBC
+Data sanitisation methods
+-------------------------
 
-*I like the description of the two different approaches to input sanitisation,*
-*in https://www.troyhunt.com/understanding-xss-input-sanitisation/*
+There are many ways in which data, including both input from the users and
+the data persisted in memory or a database, can be sanitised. There are two
+opposite methods that can be used to tackle the problem of sanitisation:
+
+* **Whitelisting approach**: analysing the input and only allowing what is
+  clearly recognised as non-malicious. For example, in case of HTML sanitisation,
+  a website could only allow tags from a list of "good" known tags. This is easy
+  to implement, probably the most common and can be safer. The issue with this
+  method is that potentially innocuous data, such as new and different tags for
+  text manipulation, could be rejected.
+
+* **Blacklisting approach**: analysing the input and trying to recognise
+  malicious data, and blocking it. For example, in case of HTML sanitisation,
+  a website could block ``<script>``, ``<img>``, and similar tags from a
+  list of "bad" known ones. The issue
+  with this method is that, as technology evolves quickly and new tags are
+  introduced, some may be exploited before they are blacklisted,
+  therefore it requires the blacklist to be periodically reviewed and
+  updated proactively.
 
 
 
