@@ -18,10 +18,24 @@ itself in some way across the website:
   a private message to the victim's friends, which included a malicious URL.
 
 
-**Extend the code used in the last exercise, so that the code will automatically**
-**reproduce itself it the user who views the comment is authenticated.**
+**Write a comment containing some Javascript code which will**
+**share itself (both the text of the comment and the Javascript code)**
+**as a new comment by the victim.**
+
+**The victim should not**
+**be able to notice the attack (i.e. no message should appear, and the webpage**
+**should not refresh to reveal the new comment created for the victim).**
 
 Hint:
+  Comments can be published by any authenticated users
+  by making an HTTP POST request to the
+  web application, using the URL ``/?page=comment.php``, with the following
+  parameters:
+
+  * ``article_id``: numeric ID of an existing article (you
+    can find it in the URL when viewing an article),
+  * ``body``: the text of the comment.
+
   You can use HTML classes and jQuery's helpers to find objects in
   the document.
 

