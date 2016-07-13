@@ -61,12 +61,9 @@ Hint:
 
 **References**
 
-[1] "Twitter shuts down Tweetdeck after XSS flaw leaves users vulnerable to account hijack"
-  Alex Hern, The Guardian. [Online] Available at:  https://www.theguardian.com/technology/2014/jun/11/twitter-tweetdeck-xss-flaw-users-vulnerable
-  [Accessed July 2016].
-[2] "Samy (Computer worm)"
-  Wikipedia. [Online] Available at: https://en.wikipedia.org/wiki/Samy_(computer_worm)
-  [Accessed July 2016].
-[3] "Persistent XSS Vulnerability in Facebook",
-  Candid Wueest, Symantec. [Online] Available at: http://www.symantec.com/connect/blogs/persistent-xss-vulnerability-facebook
-  [Accessed July 2016].
+(1) "Twitter shuts down Tweetdeck after XSS flaw leaves users vulnerable to account hijack", Alex Hern, The Guardian.
+  https://www.theguardian.com/technology/2014/jun/11/twitter-tweetdeck-xss-flaw-users-vulnerable
+(2) "Samy (Computer worm)", Wikipedia.
+  https://en.wikipedia.org/wiki/Samy_(computer_worm)
+(3) "Persistent XSS Vulnerability in Facebook", Candid Wueest, Symantec.
+  http://www.symantec.com/connect/blogs/persistent-xss-vulnerability-facebook

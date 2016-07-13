@@ -15,7 +15,7 @@ some security vulnerabilities, including those explained in this worksheet.
 
 The first step is to familiarise with the website. You can create an
 account using the "Register" link at the top of the page. The website
-allows users to login, view articles, comment them and
+allows users to login, view articles and write comments.
 
 
 Unsanitised output
@@ -41,7 +41,7 @@ and the unfiltered text is interpreted as HTML code by the browser.
 **in the search page.**
 
 Hint:
-    Try searching the internet for ways to display an image in HTML.
+    You can find a list of HTML tags at http://www.w3schools.com/tags/.
 
 This type of attack is known as *non-persistent*, because the result is
 not saved in the website's database, and it needs the attacker to share
@@ -137,7 +137,7 @@ about sessions and cookies, feel free to skip this section.
 
 HTTP (*Hypertext Transfer Protocol*) is the protocol used for the transmission
 of webpages and is the foundation of websites and web applications. Its
-development began in 1989, before modern web applications, and it was originally
+development began in 1989 before modern web applications, and it was originally
 designed to serve as a protocol for simple informative webpages. It is probably
 for this reason that HTTP is a *stateless* protocol, meaning that its
 specification has no concept of a *session* between a client

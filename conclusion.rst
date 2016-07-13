@@ -31,6 +31,14 @@ and development teams to understand and put in place processes for reviewing
 the security aspect of applications periodically, and strengthening it if
 necessary.
 
+**Data sanitisation**
+
+TBC
+
+*I like the description of the two different approaches to input sanitisation,*
+*in https://www.troyhunt.com/understanding-xss-input-sanitisation/*
+
+
 
 Further Reading and References
 ______________________________
