@@ -60,4 +60,6 @@ opposite methods that can be used to tackle the problem of sanitisation:
 Further Reading and References
 ______________________________
 
-TBC
+* **Excess XSS** by Jakob Kallin and Irene Lobo Valbuena is a good starting point
+  if you want to learn more about types of XSS attacks. It is freely available online
+  at http://excess-xss.com/.
