@@ -43,7 +43,8 @@ and the unfiltered text is interpreted as HTML code by the browser.
 Hint:
     You can find a list of HTML tags at http://www.w3schools.com/tags/.
 
-This type of attack is known as *non-persistent*, because the result is
+This type of attack is known as *non-persistent* or *reflected*,
+because the result is shown back to the user but it is
 not saved in the website's database, and it needs the attacker to share
 the link of the search results page and it only affects users who
 click on the malicious link.
@@ -280,3 +281,6 @@ Hint:
   For example you can use Firebug for Firefox, which is available
   at https://getfirebug.com/downloads/. You can then activate the
   Firebug panel, open the Cookies tab and edit your cookies.
+
+This type of attack is known as *persistent*,
+because the malicious code is stored in the website by the attacker.
