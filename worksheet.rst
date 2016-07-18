@@ -275,12 +275,28 @@ Hint:
 Hint:
   To change your current session ID, you will need to edit your own cookies.
   Unfortunately, most modern browsers' developer tools allow you only
-  to view and delete cookies, but not to edit them. You will need to
-  download an extension for your browser in order to edit cookies.
+  to view and delete cookies, but not to edit them.
 
-  For example you can use Firebug for Firefox, which is available
+  To change the ``PHPSESSID`` cookie to the value ``NEW_VALUE``, you can
+  open the website, then the browser's Console, and paste the following
+  code:
+
+  .. code:: javascript
+
+    document.cookie = "PHPSESSID=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    document.cookie = "PHPSESSID=NEW_VALUE";
+
+  Please note that the first line is needed to discard the old value
+  of the cookie, by setting its expiration date to the past. The second
+  line then sets the cookie value to ``NEW_VALUE``.  You can
+  read more about ``document.cookie`` at
+  https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie.
+
+  Alternatively you can use a browser extension, such as
+  Firebug for Firefox, which is available
   at https://getfirebug.com/downloads/. You can then activate the
-  Firebug panel, open the Cookies tab and edit your cookies.
+  Firebug panel, open the Cookies tab and edit your cookies
+  via the UI.
 
 This type of attack is known as *persistent*,
 because the malicious code is stored in the website by the attacker.
