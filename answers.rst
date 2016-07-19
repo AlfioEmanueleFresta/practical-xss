@@ -1,6 +1,52 @@
 Answer Sheet
 ============
 
+Fix the search
+--------------
+
+.. code:: php
+
+  function prepareSearchTerms($terms) {
+    $terms = ucwords($terms);  // Capitalise each word.
+    $terms = htmlspecialchars($terms);  // Escape special HTML characters.
+    return $terms;
+  }
+
+Alternatively, this would also work in most cases:
+
+.. code:: php
+
+  function prepareSearchTerms($terms) {
+    $terms = ucwords($terms);  // Capitalise each word.
+    $terms = str_replace("<", "&lt;", $terms); 
+    $terms = str_replace(">", "&rt;", $terms);
+    return $terms;
+  }
+  
+Note that the second solution given above does not protect in cases where 
+the output is used as part of an attribute, e.g.:
+
+.. code:: html
+
+  <h2 title="Results for <?= $search_term; ?>">
+    ...
+  </h2>
+  
+Could be exploited to output the following HTML:
+
+.. code:: php
+
+  $search_term = '" onfocus="alert(\'Javascript Execution\');';
+
+
+.. code:: html
+
+  <h2 title="Results for " onfocus="alert('Javascript Execution');">
+    ...
+  </h2>
+
+  
+
 Using Javascript to steal the session ID
 ----------------------------------------
 
