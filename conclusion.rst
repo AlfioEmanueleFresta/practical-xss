@@ -55,6 +55,24 @@ opposite methods that can be used to tackle the problem of sanitisation:
   therefore it requires the blacklist to be periodically reviewed and
   updated proactively.
 
+Common web frameworks for most programming languages generally
+offer built-in techinques to protect the applications from XSS
+attacks, including template engines that require the programmer to 
+explicitely deactivate HTML escaping. Using these frameworks significantly
+reduces the risk of accidental security vulnerabilities in your
+applications.
+
+Examples of PHP template
+engines with this behaviour are `Smarty <http://www.smarty.net/>`_ and 
+`Twig <http://twig.sensiolabs.org/>`. Examples of Python web frameworks
+include `Django <https://www.djangoproject.com/>`_ and 
+`Web2py <http://www.web2py.com/>`_.
+
+Alternatively, most web programming languages include functions to
+help you process users' input data. For example, in PHP you should use
+`htmlspecialchars() <http://php.net/manual/en/function.htmlspecialchars.php>`_
+or `htmlentities() <http://php.net/manual/en/function.htmlentities.php>`_ to
+securely excape any HTML input.
 
 
 Further Reading and References
