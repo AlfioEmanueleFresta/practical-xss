@@ -57,15 +57,15 @@ opposite methods that can be used to tackle the problem of sanitisation:
 
 Common web frameworks for most programming languages generally
 offer built-in techinques to protect the applications from XSS
-attacks, including template engines that require the programmer to 
+attacks, including template engines that require the programmer to
 explicitely deactivate HTML escaping. Using these frameworks significantly
 reduces the risk of accidental security vulnerabilities in your
 applications.
 
 Examples of PHP template
-engines with this behaviour are `Smarty <http://www.smarty.net/>`_ and 
+engines with this behaviour are `Smarty <http://www.smarty.net/>`_ and
 `Twig <http://twig.sensiolabs.org/>`. Examples of Python web frameworks
-include `Django <https://www.djangoproject.com/>`_ and 
+include `Django <https://www.djangoproject.com/>`_ and
 `Web2py <http://www.web2py.com/>`_.
 
 Alternatively, most web programming languages include functions to
@@ -73,6 +73,27 @@ help you process users' input data. For example, in PHP you should use
 `htmlspecialchars() <http://php.net/manual/en/function.htmlspecialchars.php>`_
 or `htmlentities() <http://php.net/manual/en/function.htmlentities.php>`_ to
 securely excape any HTML input.
+
+
+Ethical Issues
+______________
+
+As is common in security teaching, the techniques described here could be
+used to attack systems but you must behave responsibly and ethically toward
+other people, their data and systems. The writing or use of tools to gain
+unauthorised access to systems is a criminal offence.
+
+The Compure Misuse Act (1990) clearly states:
+
+  [...]
+
+  A person is guilty of an offence if—
+    (a) he causes a computer to perform any function with intent to secure access to any program or data held in any computer, or to enable any such access to be secured;
+    (b) the access he intends to secure, or to enable to be secured, is unauthorised;
+
+  [...]
+
+You can learn more about the Act at http://www.legislation.gov.uk/ukpga/1990/18/contents.
 
 
 Further Reading and References
