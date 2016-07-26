@@ -302,8 +302,8 @@ This type of attack is known as *persistent*,
 because the malicious code is stored in the website by the attacker.
 
 
-Note on CORS (Cross-Origin Resource Sharing)
---------------------------------------------
+Note on HTTP access control: CORS (Cross-Origin Resource Sharing)
+-----------------------------------------------------------------
 
 For security reasons modern browsers restrict cross-origin HTTP requests
 initiated from within scripts. This includes HTTP POST requests made using
