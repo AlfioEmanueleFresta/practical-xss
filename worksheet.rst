@@ -86,6 +86,9 @@ Hint:
     hexadecimal HTML notation, e.g. ``£`` can be written
     as ``&#163;`` (or its memorable equivalent ``&pound;``).
 
+    Think about which special characters play a role in HTML injection
+    attacks.
+
 
 Injecting Javascript Code
 _________________________
