@@ -29,7 +29,7 @@ itself in some way across the website:
 Hint:
   Comments can be published by any authenticated users
   by making an HTTP POST request to the
-  web application, using the URL ``/?page=comment.php``, with the following
+  web application, using the URL ``http://<IP ADDRESS>:12342/?page=comment.php``, with the following
   parameters:
 
   * ``article_id``: numeric ID of an existing article (you
@@ -54,9 +54,10 @@ Hint:
 
   Also, you may find useful the documentation of these jQuery methods:
 
-  * jQuery(...):  http://api.jquery.com/jquery/
-  * .parent():    https://api.jquery.com/parent/
-  * .html():      http://api.jquery.com/html/
+  * jQuery(...):    https://api.jquery.com/jquery/
+  * jQuery.post():  https://api.jquery.com/jQuery.post/
+  * .parent():      https://api.jquery.com/parent/
+  * .html():        https://api.jquery.com/html/
 
 
 **References**
