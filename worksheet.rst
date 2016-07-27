@@ -28,7 +28,8 @@ searches the database for articles by their title.
 In this website, the search input is not appropriately sanitised.
 Notice that the search functionality of the website returns a webpage with
 a heading which counts the number of results and prints back the search
-terms used (i.e. searching for ``Lorem ipsum`` will print ``4 results for "Lorem ipsum"``).
+terms used (i.e. searching for ``Alan Turing`` will print
+``1 results for "Alan Turing"``).
 
 If you insert some HTML code into the input bar, you can notice that
 this is not correctly filtered by the application.
