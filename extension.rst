@@ -29,7 +29,7 @@ itself in some way across the website:
 Hint:
   Comments can be published by any authenticated users
   by making an HTTP POST request to the
-  web application, using the URL ``http://<IP ADDRESS>:12342/?page=comment.php``, with the following
+  web application, using the URL ``http://<IP ADDRESS>:12342/index.php?page=comment.php``, with the following
   parameters:
 
   * ``article_id``: numeric ID of an existing article (you
