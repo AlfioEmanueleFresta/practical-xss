@@ -102,3 +102,14 @@ ______________________________
 * **Excess XSS** by Jakob Kallin and Irene Lobo Valbuena is a good starting point
   if you want to learn more about types of XSS attacks. It is freely available online
   at http://excess-xss.com/.
+
+* The **National Vulnerability Database** (https://web.nvd.nist.gov/)
+  is the U.S. governement repository
+  of standards based vulnerability management data. According to this database,
+  XSS represented a significant portion of all vulnerabilities reported.
+
+  .. image:: img-nist.png
+
+  *Cross-Site Scripting Vulnerabilities Matches per Year*
+
+  Source: https://web.nvd.nist.gov/view/vuln/statistics-results?adv_search=true&cves=on&cwe_id=CWE-79&cvss_version=3
