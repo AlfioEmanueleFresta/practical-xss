@@ -292,6 +292,8 @@ Hint:
     document.cookie = "PHPSESSID=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     document.cookie = "PHPSESSID=NEW_VALUE";
 
+  Finally, remember to refresh the webpage to see any changes.
+
   Please note that the first line is needed to discard the old value
   of the cookie, by setting its expiration date to the past. The second
   line then sets the cookie value to ``NEW_VALUE``.  You can
