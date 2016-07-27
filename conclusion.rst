@@ -75,6 +75,28 @@ or `htmlentities() <http://php.net/manual/en/function.htmlentities.php>`_ to
 securely excape any HTML input.
 
 
+OWASP XSS Prevention Cheat Sheet
+--------------------------------
+
+OWASP (The Open Web Application Security Project, https://www.owasp.org)
+published on its wiki a list of 11 XSS prevention rules.
+
+    * RULE #0 - Never Insert Untrusted Data Except in Allowed Locations
+    * RULE #1 - HTML Escape Before Inserting Untrusted Data into HTML Element Content
+    * RULE #2 - Attribute Escape Before Inserting Untrusted Data into HTML Common Attributes
+    * RULE #3 - JavaScript Escape Before Inserting Untrusted Data into JavaScript Data Values
+    * RULE #4 - CSS Escape And Strictly Validate Before Inserting Untrusted Data into HTML Style Property Values
+    * RULE #5 - URL Escape Before Inserting Untrusted Data into HTML URL Parameter Values
+    * RULE #6 - Sanitize HTML Markup with a Library Designed for the Job
+    * RULE #7 - Prevent DOM-based XSS
+    * Bonus Rule #1: Use HTTPOnly cookie flag
+    * Bonus Rule #2: Implement Content Security Policy
+    * Bonus Rule #3: Use an Auto-Escaping Template System
+    * Bonus Rule #4: Use the X-XSS-Protection Response Header
+
+You can read more about each of these rules at: https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet.
+
+
 Ethical Issues
 ______________
 
