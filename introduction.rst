@@ -1,17 +1,21 @@
 Introduction
 ========================================================================
 
-Software procedures rely on the presence of well-formed input data.
-Bad input data can cause programs to behave incorrectly or, in some
-occasions, may even lead the software to expose sensitive information
-or compromise the state of the system.
+The most prevalent attacks on web applications are achieved by attackers who
+misuse the application by 'crafting' input to make the program behave in an
+unexpected way.
+
+This experiment aims to demonstrate and explain some of the most common
+attacks which target web applications vulnerable to malicious input data.
+
+One significant type of misuse is to add data to a website
+that will later be provided to other users and interpreted in their browsers
+as a script; this results in an innocent user executing a program which has
+been designed by the attacker.
 
 It is important for software developers to understand the importance of
 careful input sanitisation, what it means and what is the extent of the
 danger when it is done incorrectly.
-
-This experiment aims to demonstrate and explain some of the most common
-attacks which target web applications vulnerable to malicious input data.
 
 
 Aims and Objectives
