@@ -105,7 +105,7 @@ used to attack systems but you must behave responsibly and ethically toward
 other people, their data and systems. The writing or use of tools to gain
 unauthorised access to systems is a criminal offence.
 
-The Compure Misuse Act (1990) clearly states:
+The Computer Misuse Act (1990) clearly states:
 
   [...]
 
