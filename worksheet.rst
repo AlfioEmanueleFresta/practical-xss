@@ -226,7 +226,7 @@ and your user-agent string.
 
 
 Using Javascript to steal the session ID
-----------------------------------------
+________________________________________
 
 Javascript code has the ability to read and write cookies from and to the
 browser. The cookies string can be accessed as the variable ``document.cookie``,
