@@ -254,7 +254,7 @@ known as AJAX requests. These request can carry arbitrary data, including
 information about the user collected from the vulnerable website.
 
 For example, you can use
-Javascript to send a requesto the Request Bin application,
+Javascript to send a request to the Request Bin application,
 by writing in the Console:
 
 .. code:: javascript
