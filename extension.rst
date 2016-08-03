@@ -17,14 +17,15 @@ itself in some way across the website:
 * Facebook's vulnerability was exploited by an attacker to automatically send
   a private message to the victim's friends, which included a malicious URL.
 
+.. topic:: Extension Exercise
 
-**Write a comment containing some Javascript code which will**
-**share itself (both the text of the comment and the Javascript code)**
-**as a new comment to an article of your choice by the victim.**
+  Write a comment containing some Javascript code which will
+  share itself (both the text of the comment and the Javascript code)
+  as a new comment to an article of your choice by the victim.
 
-**The victim should not**
-**be able to notice the attack (i.e. no message should appear, and the webpage**
-**should not refresh to reveal the new comment created for the victim).**
+  The victim should not
+  be able to notice the attack (i.e. no message should appear, and the webpage
+  should not refresh to reveal the new comment created for the victim).
 
 Hint:
   Comments can be published by any authenticated users

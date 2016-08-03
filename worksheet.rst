@@ -39,8 +39,10 @@ displaying the string as it has been typed. This is
 because the HTML ``<u>...</u>`` tag is responsible for underlining text,
 and the unfiltered text is interpreted as HTML code by the browser.
 
-**Exploit this functionality to display an arbitrary image from the internet**
-**in the search page.**
+.. topic:: Exercise 1
+
+  Exploit this functionality to display an arbitrary image from the internet
+  in the search page.
 
 Hint:
     You can find a list of HTML tags at http://www.w3schools.com/tags/.
@@ -60,10 +62,10 @@ edit from Usermin in ``/home/student/webapp/pages/search.php``. You can
 make changes to the file, save it and reload the page of the website
 to check the result.
 
-If things go wrong and you want to restore the initial version of the file,
-simply delete your VM and restart it from a fresh copy.
-
-**TODO: Maybe provide something easier to reset the code?**
+If things go wrong:
+  If you want to restore the initial version of the files,
+  simply click on the "reset changes" link in the footer of the website,
+  then click on the "reset code" button.
 
 PHP files (having ``.php`` extension) contain HTML code and they may contain some PHP code
 between ``<?php`` and ``?>`` tags. PHP code is processed by the server when
@@ -77,9 +79,11 @@ is used to search the articles of the website. Currently, it only capitalises
 the first letter of each word in the string
 (i.e. ``this is a search query`` -> ``This Is A Search Query``).
 
-**Change the** ``prepareSearchTerm`` **function to fix the vulnerability.**
-**Then test that the string you prepared in the previous exercise**
-**is now innocuous and can't be used to display an image.**
+.. topic:: Exercise 2
+
+  Change the **prepareSearchTerm** function to fix the vulnerability.
+  Then test that the string you prepared in the previous exercise
+  is now innocuous and can't be used to display an image.
 
 Hint:
     There are a couple of ways you can implement the fix to prevent
@@ -125,12 +129,14 @@ the content of the comments is persisted to the database, therefore this
 application is vulnerable to *permanent XSS attacks*, which can be vary
 dangerous.
 
-**Try typing the following code in the comment box of an article, and observe**
-**its effect on you and other users who visit the same page:**
+.. topic:: Exercise 3
 
-.. code:: javascript
+  Try typing the following code in the comment box of an article, and observe
+  its effect on you and other users who visit the same page:
 
-  <script> alert("Hello world"); </script>
+  .. code:: javascript
+
+    <script> alert("Hello world"); </script>
 
 
 
@@ -207,9 +213,11 @@ running on the VM (port 12344). This web application provides an URL,
 which you can find on the right of the home page, which simply captures
 any HTTP request made to it, and stores the content of the request.
 
-**Visit the Request Bin application (port 12344), get the capture URL from the box**
-**on the right, and visit this URL with your browser. Then refresh the**
-**home page of the Request Bin application and notice the effect.**
+.. topic:: Exercise 4
+
+  Visit the Request Bin application (port 12344), get the capture URL from the box
+  on the right, and visit this URL with your browser. Then refresh the
+  home page of the Request Bin application and notice the effect.
 
 You should find a new request, of type "GET", made by your browser when
 trying to open the page. You should be able to see the data associated
@@ -263,21 +271,25 @@ makes a HTTP POST request to the URL with payload
 ``a_number=42`` and ``some_text=Hello World!``. You can learn more about the
 ``jQuery.post`` method at https://api.jquery.com/jquery.post/.
 
-**Write a comment with some Javascript code that**
-**will make HTTP request to the Request Bin capture URL, containing the cookie**
-**information from the browser of the user.**
+.. topic:: Exercise 5
+
+  Write a comment with some Javascript code that
+  will make HTTP request to the Request Bin capture URL, containing the cookie
+  information from the browser of the user.
 
 Hint:
   Try combining the function presented above with the ``document.cookie``
   variable. Don't forget the ``<script></script>`` tags!
 
-**Now login as a second user (the "victim") and try visiting the article**
-**which contains the malicious comment. Verify that the**
-**victim unknowingly sent their cookies the Request Bin application,**
-**including their session ID.**
+.. topic:: Exercise 6
 
-**Now log out and use the session ID to impersonate the victim, without**
-**using their credentials.**
+  Now login as a second user (the "victim") and try visiting the article
+  which contains the malicious comment. Verify that the
+  victim unknowingly sent their cookies the Request Bin application,
+  including their session ID.
+
+  Now log out and use the session ID to impersonate the victim, without
+  using their credentials.
 
 Hint:
   To change your current session ID, you will need to edit your own cookies.
