@@ -14,7 +14,7 @@ Attacks on web applications have the potential of compromising the privacy of
 many users very quickly, significantly more than what was possible with worms
 that replicated via email in the 90s.
 
-For these reason it is more important than ever that those who are
+For these reasons it is more important than ever that those who are
 responsible for designing and implementing web applications have a
 thorough understanding of security risks and good practices.
 
@@ -64,7 +64,7 @@ applications.
 
 Examples of PHP template
 engines with this behaviour are `Smarty <http://www.smarty.net/>`_ and
-`Twig <http://twig.sensiolabs.org/>`. Examples of Python web frameworks
+`Twig <http://twig.sensiolabs.org/>`_. Examples of Python web frameworks
 include `Django <https://www.djangoproject.com/>`_ and
 `Web2py <http://www.web2py.com/>`_.
 
