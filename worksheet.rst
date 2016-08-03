@@ -5,13 +5,13 @@ Preparation
 ___________
 
 Start the Virtual Machine and use your favourite browser to navigate to the
-web application (The Terrible Website,
+web application (A Terrible Website,
 port 12342), Usermin (port 12323) and Request Bin (port 12344).
 
 After logging in, Usermin will show you the contents of ``/home/student``, from
 which you can access the web application's code in the ``webapp`` folder.
 
-The web application (The Terrible Website) is a sample website designed to demonstrate
+The web application (A Terrible Website) is a sample website designed to demonstrate
 some security vulnerabilities, including those explained in this worksheet.
 
 The first step is to familiarise with the website. You can create an
@@ -247,7 +247,7 @@ on your computer, is normally enough to fool the website into believing you
 are in fact the other user: this will cause the website to log you in as the other
 user.
 
-Now return to the web application (The Terrible Website).
+Now return to the web application (A Terrible Website).
 
 Javascript code can be used to make HTTP requests in background. These are
 known as AJAX requests. These request can carry arbitrary data, including
